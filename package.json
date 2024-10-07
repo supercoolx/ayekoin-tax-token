@@ -1,0 +1,13 @@
+{
+  "name": "hardhat-project",
+  "scripts": {
+    "deploy": "npx hardhat run ./scripts/deploy.js",
+    "clean": "npx hardhat clean"
+  },
+  "dependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@openzeppelin/contracts": "^4.9.6",
+    "dotenv": "^16.4.5",
+    "hardhat": "^2.22.10"
+  }
+}
