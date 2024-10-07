@@ -648,11 +648,11 @@ contract AYEKOIN is ERC20, ERC20Burnable, Ownable {
 
     function _transfer(address from, address to, uint256 amount) internal override {
         if (from == pool) {
-            super._transfer(from, owner(), 100 * buyFee / 100);
-            super._transfer(from, to, 100 * (100 - buyFee) / 100);
+            super._transfer(from, owner(), amount * buyFee / 100);
+            super._transfer(from, to, 100 * amount * (100 - buyFee) / 100);
         } else if (to == pool) {
-            super._transfer(from, owner(), 100 * sellFee / 100);
-            super._transfer(from, to, 100 * (100 - sellFee) / 100);
+            super._transfer(from, owner(), amount * sellFee / 100);
+            super._transfer(from, to, amount * (100 - sellFee) / 100);
         } else {
             super._transfer(from, to, amount);
         }
